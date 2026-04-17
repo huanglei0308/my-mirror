@@ -24,7 +24,7 @@ jobs:
           dst_key: ${{ secrets.GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.GITHUB_TOKEN }}
           account_type: user
-          clone_style: ssh
+          clone_style: https
           force_update: true
           debug: true
           static_list: "mirror-test"
