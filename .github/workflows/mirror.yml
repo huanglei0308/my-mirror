@@ -21,7 +21,6 @@ jobs:
         with:
           src: gitcode/lei0308
           dst: github/huanglei0308
-          dst_key: ${{ secrets.GITHUB_SSH_KEY }}
           dst_token: ${{ secrets.GITHUB_TOKEN }}
           account_type: user
           clone_style: https
