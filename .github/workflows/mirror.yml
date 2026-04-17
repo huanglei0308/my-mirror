@@ -19,11 +19,12 @@ jobs:
       - name: Mirror GitCode to GitHub
         uses: Yikun/hub-mirror-action@v1.3
         with:
-          src: gitcode/lei0308/mirror-test
-          dst: github/huanglei0308/mirror-test
-          dst_key: ${{ secrets.GITCODE_SSH_KEY }}
-          dst_token: ${{ secrets.GITCODE_TOKEN }}
+          src: gitcode/lei0308
+          dst: github/huanglei0308
+          dst_key: ${{ secrets.GITHUB_SSH_KEY }}
+          dst_token: ${{ secrets.GITHUB_TOKEN }}
           account_type: user
           clone_style: ssh
           force_update: true
           debug: true
+          static_list: "mirror-test"
