@@ -21,9 +21,10 @@ jobs:
         with:
           src: gitcode/lei0308
           dst: github/huanglei0308
-          dst_token: ${{ secrets.GITHUB_TOKEN }}
+          dst_key: ${{ secrets.GITCODE_SSH_KEY }}
+          dst_token: ${{ secrets.GITCODE_TOKEN }}
           account_type: user
-          clone_style: https
+          clone_style: ssh
           force_update: true
           debug: true
           static_list: "mirror-test"
