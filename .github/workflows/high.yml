@@ -20,11 +20,11 @@ jobs:
       uses: Yikun/hub-mirror-action@master
       with:
         src: gitcode/openeuler
-        dst: huanglei0308/my-openeuler-mirror
+        dst: github/huanglei0308
         # 公开仓库不需要 src_token
         dst_key: ${{ secrets.GITCODE_SSH_KEY }}  # SSH 私钥（写入 GitHub）
         dst_token: ${{ secrets.GITCODE_TOKEN }}      # GitHub Token
-        account_type: org
+        account_type: user
         clone_style: ssh  # 使用 SSH
         force_update: true
         debug: true
