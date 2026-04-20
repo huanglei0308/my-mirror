@@ -24,7 +24,7 @@ jobs:
       uses: huanglei0308/hub-mirror-action@master
       with:
         src: gitcode/openeuler
-        dst: github/huanglei0308
+        dst: github/my-openeuler
         dst_key: ${{ secrets.GITCODE_SSH_KEY }}
         src_token: ${{ secrets.SRC_TOKEN }}
         dst_token:  ${{ secrets.GITCODE_TOKEN }}
