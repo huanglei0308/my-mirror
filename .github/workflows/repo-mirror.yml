@@ -1,0 +1,34 @@
+# Enable job 2022-09-30
+name: Openeuler gitee repos mirror periodic job
+
+on:
+  workflow_dispatch:
+  pull_request:
+    # Runs at every pull requests submitted in master branch 
+    branches: [ master ]
+    paths:
+    - '.github/workflows/**'
+  schedule:
+    # Runs at 01:00 UTC (9:00 AM Beijing) every day
+    - cron:  '0 1 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      PIP_BREAK_SYSTEM_PACKAGES: "1"
+    
+    steps:
+    - name: Mirror the gitcode/openeuler org repos to huanglei0308/my-openeuler-mirror.
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: gitcode/openeuler
+        dst: github/huanglei0308
+        dst_key: ${{ secrets.GITCODE_SSH_KEY }}
+        dst_token:  ${{ secrets.GITCODE_TOKEN }}
+        account_type: user
+        clone_style: ssh
+        force_update: true
+        debug: true
+        black_list: "kernel,qemu,raspberrypi,raspberrypi-kernel,website-v2" 
