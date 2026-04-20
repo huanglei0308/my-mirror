@@ -1,5 +1,5 @@
 # Enable job 2022-09-30
-name: Openeuler gitee repos mirror periodic job
+name: Openeuler gitcode repos mirror periodic job
 
 on:
   workflow_dispatch:
