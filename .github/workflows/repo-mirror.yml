@@ -21,7 +21,7 @@ jobs:
     
     steps:
     - name: Mirror the gitcode/openeuler org repos to huanglei0308/my-openeuler-mirror.
-      uses: huanglei0308/hub-mirror-action@master
+      uses: Yikun/hub-mirror-action@master
       with:
         src: gitcode/openeuler
         dst: github/my-openeuler
@@ -32,4 +32,4 @@ jobs:
         clone_style: ssh
         force_update: true
         debug: true
-        black_list: "kernel,qemu,raspberrypi,raspberrypi-kernel,website-v2" 
+        static_list: "kernel,qemu,raspberrypi,raspberrypi-kernel,website-v2" 
