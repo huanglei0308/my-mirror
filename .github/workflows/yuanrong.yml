@@ -28,4 +28,4 @@ jobs:
         clone_style: ssh  # 使用 SSH
         force_update: true
         debug: true
-        static_list: "yuanrong"
+        static_list: "yuanrong,yuanrong-datasystem,yuanrong-functionsystem,yuanrong-frontend"
