@@ -1,0 +1,31 @@
+name: openEuler high priority mirror periodic job
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master ]
+    paths:
+    - '.github/workflows/**'
+  schedule:
+    - cron: '0 * * * *'  # 每小时整点运行
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      PIP_BREAK_SYSTEM_PACKAGES: "1"
+    
+    steps:
+    - name: Mirror stratovirt from GitCode to GitHub
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: gitcode/openeuler
+        dst: github/open-euler-test
+        # 公开仓库不需要 src_token
+        dst_key: ${{ secrets.GITCODE_SSH_KEY }}  # SSH 私钥（写入 GitHub）
+        dst_token: ${{ secrets.GITCODE_TOKEN }}      # GitHub Token
+        account_type: org
+        clone_style: ssh  # 使用 SSH
+        force_update: true
+        debug: true
+        static_list: "yuanrong"
