@@ -20,11 +20,11 @@ jobs:
       PIP_BREAK_SYSTEM_PACKAGES: "1"
     
     steps:
-    - name: Mirror the gitcode/openeuler org repos to huanglei0308/my-openeuler-mirror.
+    - name: Mirror the gitcode/openeuler org repos to huanglei0308/openeuler-mirror-test.
       uses: Yikun/hub-mirror-action@master
       with:
         src: gitcode/openeuler
-        dst: github/my-openeuler
+        dst: github/openeuler-mirror-test
         dst_key: ${{ secrets.GITCODE_SSH_KEY }}
         src_token: ${{ secrets.SRC_TOKEN }}
         dst_token:  ${{ secrets.GITCODE_TOKEN }}
