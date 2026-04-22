@@ -20,7 +20,7 @@ jobs:
       uses: Yikun/hub-mirror-action@master
       with:
         src: gitcode/openeuler
-        dst: github/open-euler-test
+        dst: github/openeuler-mirror-test
         # 公开仓库不需要 src_token
         dst_key: ${{ secrets.GITCODE_SSH_KEY }}  # SSH 私钥（写入 GitHub）
         dst_token: ${{ secrets.GITCODE_TOKEN }}      # GitHub Token
