@@ -25,9 +25,9 @@ jobs:
       with:
         src: gitcode/openeuler
         dst: github/openeuler-mirror-test
-        dst_key: ${{ secrets.GITCODE_SSH_KEY }}
-        src_token: ${{ secrets.SRC_TOKEN }}
-        dst_token:  ${{ secrets.GITCODE_TOKEN }}
+        dst_key: ${{ secrets.SYNC_EULER_KEY }}
+        src_token: ${{ secrets.GITCODE_TOKEN }}
+        dst_token:  ${{ secrets.SYNC_EULER_TOKEN }}
         account_type: org
         clone_style: ssh
         force_update: true
